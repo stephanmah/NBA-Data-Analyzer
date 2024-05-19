@@ -5,6 +5,7 @@ import datetime
 import player_info
 import team_info
 
+
 st.set_page_config(layout="wide")
 
 with st.sidebar:
@@ -15,3 +16,4 @@ roster_choice = st.radio("Current Or Historical Roster", (["Current Rosters","Hi
 
 current_year = datetime.date.today().year
 select_year = st.slider("Choose Year", min_value = 1949, max_value = (current_year), value = current_year)
+

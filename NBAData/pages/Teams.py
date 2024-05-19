@@ -38,8 +38,8 @@ with st.container(border=True):
     st.subheader(nba_teams_selectbox)
 
     select_year = st.slider("Choose Year", min_value=1949, max_value=(current_year), value=current_year)
-    basic_team_stats = team_info.basic_stats(nba_teams_selectbox, select_year, season_type_selector)
-    basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
+    basic_team_stats = team_info.choose_basic_stats(nba_teams_selectbox, select_year, season_type_selector)
+    #basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
 
     
     
@@ -54,8 +54,9 @@ with st.container(border=True):
     st.header("Advanced Team Stats")
     per_mode =  st.radio("Per Mode", (["PerGame","Totals"]))
 
-    advanced_team_stats = team_info.advanced_stats(nba_teams_selectbox,per_mode,season_type_selector)
+    advanced_team_stats = team_info.choose_advanced_stats(nba_teams_selectbox,per_mode,season_type_selector)
     advanced_team_stats_df = pd.DataFrame(advanced_team_stats.get_data_frames()[0])
+
 
     advanced_team_stats_table = st.dataframe(
         advanced_team_stats_df, hide_index=True, use_container_width=True, column_order=("TEAM_CITY", "TEAM_NAME",     "YEAR",  "GP",  "WINS",  "LOSSES",  "WIN_PCT",  "CONF_RANK",  "DIV_RANK",  "PO_WINS",  "PO_LOSSES",  "NBA_FINALS_APPEARANCE",   "FGM",   "FGA",  "FG_PCT",  "FG3M",  "FG3A",  "FG3_PCT",   "FTM",   "FTA",  "FT_PCT",  "OREB",  "DREB",   "REB",   "AST",    "PF",  "STL",   "TOV",  "BLK",    "PTS",  "PTS_RANK"
@@ -64,4 +65,4 @@ with st.container(border=True):
                                                                                                             }))
     
 
-
+basic_team_stats_df

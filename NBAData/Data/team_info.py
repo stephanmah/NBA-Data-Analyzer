@@ -2,9 +2,12 @@ from nba_api.stats.static import teams
 from nba_api.stats.endpoints import TeamInfoCommon, TeamYearByYearStats
 import pandas as pd
 
-teams_list = teams.get_teams()
+#teams_list = teams.get_teams()
 
 team_list_DF = pd.DataFrame(teams.get_teams())
+
+
+
 
 
 
@@ -75,20 +78,27 @@ nba_logo_dict = {"Atlanta Hawks": "images/hawks_logo.png",
 
                  }
 
-print(nba_colors_dict["New York Knicks"])
 
 
 team_ids_dict = {team['full_name']: team['id'] for team in teams_list}
 
 
-def basic_stats(team_full_name, season_year, season_type):
+
+
+
+
+
+
+
+
+def choose_basic_stats(team_full_name, season_year, season_type):
 
     team_stats_basic = TeamInfoCommon(
         league_id="00", team_id=team_ids_dict[team_full_name], season_nullable=season_year - 1, season_type_nullable=season_type)
     return team_stats_basic
 
 
-def advanced_stats(team_full_name, per_mode, season_type):
+def choose_advanced_stats(team_full_name, per_mode, season_type):
     team_advanced_stats = TeamYearByYearStats(
         league_id="00", per_mode_simple=per_mode, season_type_all_star=season_type, team_id=team_ids_dict[team_full_name])
     return team_advanced_stats
