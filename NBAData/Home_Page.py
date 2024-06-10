@@ -3,7 +3,7 @@ import sys
 
 sys.path.insert(1, 'Data')
 st.set_page_config(layout="wide")
-#sys.path.insert(1, './NBAData/Data/')
+sys.path.insert(1, './NBAData/Data/')
 import team_info
 
 st.title("NBA Data Analyzer")

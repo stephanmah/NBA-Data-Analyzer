@@ -16,9 +16,6 @@ st.title("Team Stats")
 
 
 
-
-
-
 season_type_selector = st.radio(
     "Season Type", (["Regular Season", "Pre Season","Playoffs"]), horizontal=True, key="roster")
 current_year = datetime.date.today().year
@@ -33,13 +30,13 @@ with st.container(border=True):
     col1, col2, col3 = st.columns(3)
 
     
-    #st.image(team_info.nba_logo_dict[nba_teams_selectbox])
+    st.image(team_info.nba_logo_dict[nba_teams_selectbox])
     st.header("Team Standings")
     st.subheader(nba_teams_selectbox)
 
     select_year = st.slider("Choose Year", min_value=1949, max_value=(current_year), value=current_year)
     basic_team_stats = team_info.choose_basic_stats(nba_teams_selectbox, select_year, season_type_selector)
-    #basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
+    basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
 
     
     
