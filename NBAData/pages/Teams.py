@@ -30,7 +30,7 @@ with st.container(border=True):
     col1, col2, col3 = st.columns(3)
 
     
-    st.image(team_info.nba_logo_dict[nba_teams_selectbox])
+    #st.image(team_info.nba_logo_dict[nba_teams_selectbox])
     st.header("Team Standings")
     st.subheader(nba_teams_selectbox)
 
@@ -62,4 +62,4 @@ with st.container(border=True):
                                                                                                             }))
     
 
-basic_team_stats_df
+#basic_team_stats_df

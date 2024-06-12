@@ -1,6 +1,7 @@
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import TeamInfoCommon, TeamYearByYearStats
 import pandas as pd
+import time
 
 teams_list = teams.get_teams()
 
@@ -100,6 +101,7 @@ def choose_basic_stats(team_full_name, season_year, season_type):
 
 
 def choose_advanced_stats(team_full_name, per_mode, season_type):
+    time.sleep(20)
     team_advanced_stats = TeamYearByYearStats(
         league_id="00", per_mode_simple=per_mode, season_type_all_star=season_type, team_id=team_ids_dict[team_full_name])
     return team_advanced_stats
