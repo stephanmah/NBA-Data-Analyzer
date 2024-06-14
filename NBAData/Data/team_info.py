@@ -48,7 +48,7 @@ nba_colors_dict = {"Atlanta Hawks": "#e03a3e",
 
 
 nba_logo_dict = {
-                 "Atlanta Hawks": "images/hawks_logo.png",
+                 "Atlanta Hawks": "NBAData/hawks_logo.png",
                  "Boston Celtics": "images/celtics_logo.png",
                  "Brooklyn Nets": "images/nets_logo.png",
                  "Charlotte Hornets": "images/hornets_logo.png",
