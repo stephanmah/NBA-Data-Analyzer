@@ -9,7 +9,7 @@ teams_list = teams.get_teams()
 team_list_DF = pd.DataFrame(teams.get_teams())
 
 
-random_number = randrange(1,5)
+random_number = randrange(1,3)
 
 
 
@@ -48,38 +48,38 @@ nba_colors_dict = {"Atlanta Hawks": "#e03a3e",
 
 
 nba_logo_dict = {
-                 "Atlanta Hawks": "NBAData/hawks_logo.png",
-                 "Boston Celtics": "images/celtics_logo.png",
-                 "Brooklyn Nets": "images/nets_logo.png",
-                 "Charlotte Hornets": "images/hornets_logo.png",
-                 "Chicago Bulls": "images/bulls_logo.png",
-                 "Cleveland Cavaliers": "images/cavs_logo.png",
-                 "Dallas Mavericks": "images/mavs_logo.png",
-                 "Denver Nuggets": "images/nuggets_logo.png",
-                 "Detroit Pistons": "images/pistons_logo.png",
-                 "Golden State Warriors": "images/warriors_logo.png",
-                 "Houston Rockets": "images/rockets_logo.png",
-                 "Indiana Pacers": "images/pacers_logo.png",
-                 "Los Angeles Clippers": "images/clippers_logo.png",
-                 "Los Angeles Lakers": "images/lakers_logo.png",
-                 "Memphis Grizzlies": "images/grizzlies_logo.png",
-                 "Miami Heat": "images/heat_logo.png",
-                 "Milwaukee Bucks": "images/bucks_logo.png",
-                 "Minnesota Timberwolves": "images/timberwolves_logo.png",
-                 "New Orleans Pelicans": "images/pelicans_logo.png",
-                 "New York Knicks": "images/knicks_logo.png",
-                 "Oklahoma City Thunder": "images/thunder_logo.png",
-                 "Orlando Magic": "images/magic_logo.png",
-                 "Philadelphia 76ers": "images/76ers_logo.png",
-                 "Phoenix Suns": "images/suns_logo.png",
-                 "Portland Trail Blazers": "images/blazers_logo.png",
-                 "Sacramento Kings": "images/kings_logo.png",
-                 "San Antonio Spurs": "images/spurs_logo.png",
-                 "Toronto Raptors": "images/raptors_logo.png",
-                 "Utah Jazz": "images/jazz_logo.png",
-                 "Washington Wizards": "images/wizards_logo.png"
+    "Atlanta Hawks": "https://i.ibb.co/Bnd73gW/hawks-logo.png",
+    "Boston Celtics": "https://i.ibb.co/wymKQGb/celtics-logo.png",
+    "Brooklyn Nets": "https://i.ibb.co/SxH3Pdq/nets-logo.png",
+    "Charlotte Hornets": "https://i.ibb.co/tKTTfQJ/hornets-logo.png",
+    "Chicago Bulls": "https://i.ibb.co/5YKmrmT/bulls-logo.png",
+    "Cleveland Cavaliers": "https://i.ibb.co/rZPMPRk/cavs-logo.png",
+    "Dallas Mavericks": "https://i.ibb.co/bKH4b25/mavs-logo.png",
+    "Denver Nuggets": "https://i.ibb.co/4JSBwWD/nuggets-logo.png",
+    "Detroit Pistons": "https://i.ibb.co/WfCpbYy/pistons-logo.png",
+    "Golden State Warriors": "https://i.ibb.co/qWwQZdw/warriors-logo.png",
+    "Houston Rockets": "https://i.ibb.co/9ZV7t98/rockets-logo.png",
+    "Indiana Pacers": "https://i.ibb.co/wKMGfsb/pacers-logo.png",
+    "Los Angeles Clippers": "https://i.ibb.co/S3JKLhW/clippers-logo.png",
+    "Los Angeles Lakers": "https://i.ibb.co/x2b36Py/lakers-logo.png",
+    "Memphis Grizzlies": "https://i.ibb.co/z7C4sBL/grizzlies-logo.png",
+    "Miami Heat": "https://i.ibb.co/mt4bQbf/heat-logo.png",
+    "Milwaukee Bucks": "https://i.ibb.co/171KQVG/bucks-logo.png",
+    "Minnesota Timberwolves": "https://i.ibb.co/1s5H4yW/timberwolves-logo.png",
+    "New Orleans Pelicans": "https://i.ibb.co/J7g5zpv/pelicans-logo.png",
+    "New York Knicks": "https://i.ibb.co/pKfRhNb/knicks-logo.png",
+    "Oklahoma City Thunder": "https://i.ibb.co/R0wPvv5/thunder-logo.png",
+    "Orlando Magic": "https://i.ibb.co/7rSsn45/magic-logo.png",
+    "Philadelphia 76ers": "https://i.ibb.co/K733rsd/76ers-logo.png",
+    "Phoenix Suns": "https://i.ibb.co/0CvLSjc/suns-logo.png",
+    "Portland Trail Blazers": "https://i.ibb.co/T1CVdD6/blazers-logo.png",
+    "Sacramento Kings": "https://i.ibb.co/dDTHDvZ/kings-logo.png",
+    "San Antonio Spurs": "https://i.ibb.co/BKnbDsS/spurs-logo.png",
+    "Toronto Raptors": "https://i.ibb.co/3FhV0Y9/raptors-logo.png",
+    "Utah Jazz": "https://i.ibb.co/nmjw79s/jazz-logo.png",
+    "Washington Wizards": "https://i.ibb.co/hYKZdY9/wizards-logo.png"
+}
 
-                 }
 
 
 
@@ -101,7 +101,7 @@ def choose_basic_stats(team_full_name, season_year, season_type):
 
 
 def choose_advanced_stats(team_full_name, per_mode, season_type):
-    time.sleep(random_number)
+    #time.sleep(random_number)
     team_advanced_stats = TeamYearByYearStats(
         league_id="00", per_mode_simple=per_mode, season_type_all_star=season_type, team_id=team_ids_dict[team_full_name])
     return team_advanced_stats
