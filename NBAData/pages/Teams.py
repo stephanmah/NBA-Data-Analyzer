@@ -3,8 +3,6 @@ import streamlit as st
 import datetime
 import team_info
 import pandas as pd
-from nba_api.stats.endpoints import TeamInfoCommon
-
 
 st.set_page_config(layout="wide")
 
