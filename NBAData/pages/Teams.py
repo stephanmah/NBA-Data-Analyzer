@@ -46,15 +46,14 @@ with st.container(border=True):
     st.header("Advanced Team Stats")
     per_mode = st.radio("Per Mode", (["PerGame", "Totals"]))
 
-    advanced_team_stats = team_info.choose_advanced_stats(
-        nba_teams_selectbox, per_mode, season_type_selector)
-    advanced_team_stats_df = pd.DataFrame(
-        advanced_team_stats.get_data_frames()[0])
-    sorted_by_year = advanced_team_stats_df.sort_values(
-        by='YEAR', ascending=False)
+    advanced_team_stats = team_info.choose_advanced_stats( nba_teams_selectbox, per_mode, season_type_selector)
+
+    advanced_team_stats_df = pd.DataFrame(advanced_team_stats.get_data_frames()[0])
+
+    team_sorted_by_year = advanced_team_stats_df.sort_values(by='YEAR', ascending=False)
 
     advanced_team_stats_table = st.dataframe(
-        sorted_by_year, hide_index=True, use_container_width=True, column_order=("TEAM_NAME", "YEAR",  "GP",  "WINS",  "LOSSES",  "WIN_PCT",  "CONF_RANK",  "DIV_RANK",  "PO_WINS",  "PO_LOSSES",  "NBA_FINALS_APPEARANCE",   "FGM",   "FGA",  "FG_PCT",  "FG3M",  "FG3A",  "FG3_PCT",   "FTM",   "FTA",  "FT_PCT",  "OREB",  "DREB",   "REB",   "AST",    "PF",  "STL",   "TOV",  "BLK",    "PTS",  "PTS_RANK"
+        team_sorted_by_year, hide_index=True, use_container_width=True, column_order=("TEAM_NAME", "YEAR",  "GP",  "WINS",  "LOSSES",  "WIN_PCT",  "CONF_RANK",  "DIV_RANK",  "PO_WINS",  "PO_LOSSES",  "NBA_FINALS_APPEARANCE",   "FGM",   "FGA",  "FG_PCT",  "FG3M",  "FG3A",  "FG3_PCT",   "FTM",   "FTA",  "FT_PCT",  "OREB",  "DREB",   "REB",   "AST",    "PF",  "STL",   "TOV",  "BLK",    "PTS",  "PTS_RANK"
                                                                                  ), column_config=({"TEAM_CITY": "Team City", "TEAM_NAME": "Team Name",     "YEAR": "Season",  "GP": "Games Played",  "WINS": "Wins",  "LOSSES": "Losses",  "WIN_PCT": "Win %",  "CONF_RANK": "Conference Rank",  "DIV_RANK": "Division Rank",  "PO_WINS": "Playoff Wins",
                                                                                                     "PO_LOSSES": "Playoff Losses",  "CONF_COUNT": "Conference Count",  "DIV_COUNT": "Division Count", "NBA_FINALS_APPEARANCE": "Finals Appearance",   "FGM": "Field Goals Made",   "FGA": "Field Goals Attempted",  "FG_PCT": "Field Goals Attempted",  "FG3M": "3 Pointers Made",  "FG3A": "3 Pointers Attempted",  "FG3_PCT": "3 Point %",   "FTM": "Free Throws Made",   "FTA": "Free Throws Attempted",  "FT_PCT": "Free Throw %",  "OREB": "Offensive Rebounds",  "DREB": "Defensive Rebounds",   "REB": "Rebounds",   "AST": "Assists",    "PF": "Personal Fouls",  "STL": "Steals",   "TOV": "Turnovers",  "BLK": "Blocks",    "PTS": "Points",  "PTS_RANK": "Points Ranking"
                                                                                                     }))
