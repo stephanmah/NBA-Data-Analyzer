@@ -20,8 +20,8 @@ season_stat_type_dict = {
     "Playoffs Cumulative" : 3,
     "All Star Games" : 4,
     "All Star Cumulative": 5,
-    "Regular Season League Rank" : 10,
-    "Playoff Stat League Rank" : 11
+    "Regular Season League Ranking" : 10,
+    "Playoff League Ranking" : 11
 }
 
 
@@ -45,4 +45,12 @@ playercareerstats layers
 
 """
 
-#def choose_rank():
+def choose_player_stats(selected_player_id,per_mode, stat_layer):
+    player_stats = playercareerstats.PlayerCareerStats(player_id= active_players_ids_dict[selected_player_id],per_mode36=per_mode)
+    player_stats_df = player_stats.get_data_frames()[season_stat_type_dict[stat_layer]]
+    return player_stats_df
+    
+    
+    
+
+test = season_stat_type_dict["All Star Cumulative"]
