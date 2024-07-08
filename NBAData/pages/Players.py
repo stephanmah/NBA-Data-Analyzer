@@ -16,12 +16,8 @@ with st.sidebar:
 
 #roster_choice = st.radio("Current Or Historical Roster", (["Current Rosters","Historical Rosters"]),horizontal = True, key="roster")
 
-PerMode = st.radio("Stat Type", ["Total","PerGame", " Per36"])
+PerMode = st.radio("Stat Type", ["Total","PerGame", " Per36"], horizontal= True)
 
-
-
-test_players = ["lebron","kd","mj"]
-stat_scope = []
 
 stat_df = playercareerstats.PlayerCareerStats(
     player_id='203897', per_mode36="Totals")
@@ -29,10 +25,12 @@ testDF = stat_df.get_data_frames()[11]
 
 
 player_select_box = st.selectbox("choose", player_info.active_players_df["full_name"])
-st.write(player_info.active_players_ids_dict[player_select_box])
 #stat_selection
 
 
 #player_stats = player_info.choose_player_stats(player_select_box,stat_type_selector)
-st.dataframe(testDF)
-
+with st.container(border=True):
+    
+    st.write(player_info.active_players_ids_dict[player_select_box])
+    
+    st.dataframe(testDF)
