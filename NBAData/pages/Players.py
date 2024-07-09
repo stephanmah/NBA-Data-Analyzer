@@ -18,7 +18,7 @@ with st.sidebar:
 player_select_box = st.selectbox("Choose", player_info.active_players_df["full_name"])
 season_choice = ["Regular Season","Career Cumulative", "Playoffs", "Playoffs Cumulative", "All Star Games", "All Star Cumulative", "Regular Season League Ranking", "Playoff League Ranking"]
 season_select_box = st.selectbox("Season Type", season_choice)
-PerMode = st.radio("Stat Type", ["Totals","PerGame", "Per36"])
+PerMode = st.radio("Stat Type", ["PerGame","Totals", "Per36"])
 
 
 
