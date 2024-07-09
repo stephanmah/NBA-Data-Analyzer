@@ -29,10 +29,20 @@ with st.container(border=True):
     st.header("Team Standings")
     st.subheader(nba_teams_selectbox)
 
-    select_year = st.slider("Choose Year", min_value=1949,
-                            max_value=(current_year), value=current_year)
+    first_year = 1949
+    years_array = []
+    
+    for years in range(first_year,current_year)[::-1]:
+        years_array.append(years)
+
+    st.write(type(years_array))
+    
+    select_year_slider = st.slider("Choose Year", min_value=1949,max_value=(current_year), value=current_year)
+    select_year = st.selectbox("Choose year", options=[years_array])
+
+
     basic_team_stats = team_info.choose_basic_stats(
-        nba_teams_selectbox, select_year, season_type_selector)
+        nba_teams_selectbox, select_year_slider, season_type_selector)
     basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
 
     basic_stats_teams_table = st.dataframe(basic_team_stats_df, hide_index=True, use_container_width=True,
