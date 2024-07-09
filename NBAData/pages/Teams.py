@@ -6,10 +6,6 @@ import pandas as pd
 
 st.set_page_config(layout="wide")
 
-with st.sidebar:
-    st.page_link("Home_Page.py", label="Home", icon="🏠")
-    st.page_link("pages/Players.py", label="Players Info")
-
 st.title("Team Stats")
 
 

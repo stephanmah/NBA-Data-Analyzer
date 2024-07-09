@@ -8,9 +8,6 @@ import pandas as pd
 from nba_api.stats.endpoints import playercareerstats
 
 st.set_page_config(layout="wide")
-with st.sidebar:
-    st.page_link("Home_Page.py", label="Home", icon="🏠")
-    st.page_link("pages/Teams.py", label="Team Info")
 
 #roster_choice = st.radio("Current Or Historical Roster", (["Current Rosters","Historical Rosters"]),horizontal = True, key="roster")
 
