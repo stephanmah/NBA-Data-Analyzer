@@ -47,7 +47,7 @@ playercareerstats layers
 
 def choose_player_stats(selected_player_id,per_mode, stat_layer):
     player_stats = playercareerstats.PlayerCareerStats(player_id= active_players_ids_dict[selected_player_id],per_mode36=per_mode)
-    player_stats_df = player_stats.get_data_frames()[season_stat_type_dict[stat_layer]]
+    player_stats_df = player_stats.get_data_frames()[season_stat_type_dict["Career Cumulative"]]
     return player_stats_df
     
     

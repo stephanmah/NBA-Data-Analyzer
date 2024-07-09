@@ -14,7 +14,7 @@ st.title("Team Stats")
 
 
 season_type_selector = st.radio(
-    "Season Type", (["Regular Season", "Pre Season", "Playoffs"]), horizontal=True, key="roster")
+    "Season Type", (["Regular Season", "Pre Season"]), horizontal=True, key="roster")
 current_year = datetime.date.today().year
 
 
@@ -29,18 +29,14 @@ with st.container(border=True):
     st.header("Team Standings")
     st.subheader(nba_teams_selectbox)
 
-    select_year = st.slider("Choose Year", min_value=1949,
-                            max_value=(current_year), value=current_year)
+    select_year = st.selectbox("Choose Year",options=[1,2])
     basic_team_stats = team_info.choose_basic_stats(
         nba_teams_selectbox, select_year, season_type_selector)
     basic_team_stats_df = pd.DataFrame(basic_team_stats.get_data_frames()[0])
 
-    basic_stats_teams_table = st.dataframe(basic_team_stats_df, hide_index=True, use_container_width=True,
-                                           column_order=(
-                                               "SEASON_YEAR",  "TEAM_CONFERENCE", "TEAM_DIVISION", "W",   "L",    "PCT",  "MIN_YEAR"),
-
-                                           column_config=({"SEASON_YEAR": "Season", "TEAM_CONFERENCE": "Conference", "TEAM_DIVISION": "Division",
-                                                           "W": "Wins",   "L": "Losses",    "PCT": "Win %", "MIN_YEAR": "First Season"}))
+    basic_stats_teams_table = st.dataframe(basic_team_stats_df, hide_index=True, use_container_width=True,column_order=( "SEASON_YEAR", "TEAM_CONFERENCE", "TEAM_DIVISION", "W",   "L",    "PCT",  "MIN_YEAR"),
+    column_config=({"SEASON_YEAR": "Season", "TEAM_CONFERENCE": "Conference", "TEAM_DIVISION": "Division",
+    "W": "Wins",   "L": "Losses",    "PCT": "Win %", "MIN_YEAR": "First Season"}))
 
 with st.container(border=True):
     st.header("Advanced Team Stats")
