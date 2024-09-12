@@ -34,8 +34,5 @@ def choose_player_stats(selected_player_id,per_mode, stat_layer):
     
     
 
-class Player:
-    def __init__(self,player_name):
-        self.player_name = player_name
 
         
