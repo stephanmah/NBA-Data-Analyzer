@@ -92,7 +92,11 @@ class DataManager:
 
         return pd.DataFrame(inactive_players_data)
 
-    def get_player_id(self):
+    def get_player_id(self,player_name):
+        active_player_data = players.get_active_players()
+        player_to_id_map = {active_player["full_name"]: active_player[id] for active_player in active_player_data}
+        return player_to_id_map[player_name]
+
 
 
     def get_teams(self):
