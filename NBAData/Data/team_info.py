@@ -1,3 +1,4 @@
+#team_info.py
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import TeamInfoCommon, TeamYearByYearStats
 import pandas as pd
@@ -9,7 +10,7 @@ teams_list = teams.get_teams()
 team_list_DF = pd.DataFrame(teams_list)
 
 
-random_number = randrange(1,3)
+
 
 
 

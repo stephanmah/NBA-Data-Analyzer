@@ -9,3 +9,8 @@ import team_info
 st.title("NBA Data Analyzer")
 
 #st.write(team_info.teamDF)
+
+with st.sidebar:
+    st.page_link("Home_Page.py", label="Home", icon="🏠")
+    st.page_link("pages/Teams.py", label="Team Info")
+    st.page_link("pages/Players.py", label="Players Info")
